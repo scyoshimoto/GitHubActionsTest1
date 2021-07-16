@@ -108,6 +108,7 @@ resource "aws_internet_gateway" "MCRIGW" {
 resource "aws_instance" "mcr-test" {
   ami           = "ami-0dc2d3e4c0f9ebd18"
   instance_type = "t2.micro"
+  subnet_id = aws_subnet.MCRPrivateSubnet.id
 
   tags = {
     Name = "mcr-test"
