@@ -21,9 +21,8 @@ provider "aws" {
 }
 #Build the VPC
 resource "aws_vpc" "MCRVPC" {
-    cidr_block = "10.31.0.0/16"
-    instance_tenancy = "default"
-    
+  cidr_block = "10.31.0.0/16"
+  instance_tenancy = "default"
   tags =  {
     Name = "MCRVPC"
     Terraform = "true"
@@ -40,7 +39,6 @@ resource "aws_subnet" "MCRPrivateSubnet" {
 resource "aws_subnet" "MCRPublicSubnet" {
   vpc_id = aws_vpc.MCRVPC.id
   cidr_block = "10.31.1.0/24"
-    
   tags = {
     Name = "MCRPublicSubnet"
     Terraform = "true"
