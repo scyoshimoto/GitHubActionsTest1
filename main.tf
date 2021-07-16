@@ -6,7 +6,6 @@ terraform {
       name = "mcr-aws-infrabuild"
     }
   }
-}
 
   required_providers {
     aws = {
