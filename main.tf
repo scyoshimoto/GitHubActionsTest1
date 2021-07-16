@@ -1,7 +1,6 @@
 terraform {
   backend "remote" {
     organization = "MissionCyberDemonstrator"
-
     workspaces {
       name = "mcr-aws-infrabuild"
     }
@@ -13,7 +12,6 @@ terraform {
       version = "~> 3.27"
     }
   }
-
   required_version = ">= 1.0.2"
 }
 
@@ -50,9 +48,9 @@ resource "aws_subnet" "MCRPublicSubnet" {
 }
 
 resource "aws_security_group" "MCRAllowSSH" {
-  name        = "MCRAllowSSH"
+  name = "MCRAllowSSH"
   description = "Allow ssh inbound traffic from user connected with VPN"
-  vpc_id      = aws_vpc.MCRVPC.id
+  vpc_id = aws_vpc.MCRVPC.id
     
   ingress {
     description = "ssh to EC2 using VPN"
@@ -105,7 +103,7 @@ resource "aws_internet_gateway" "MCRIGW" {
 }
 
 resource "aws_instance" "mcr-test" {
-  ami           = "ami-0dc2d3e4c0f9ebd18"
+  ami = "ami-0dc2d3e4c0f9ebd18"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.MCRPrivateSubnet.id
 
