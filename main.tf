@@ -11,7 +11,7 @@ terraform {
 
 provider "aws" {
   profile = "default"
-  region  = "us-west-1"
+  region  = "us-east-1"
 }
 # Build the VPC
 resource "aws_vpc" "MCRVPC" {
