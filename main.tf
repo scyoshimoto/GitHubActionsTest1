@@ -1,4 +1,13 @@
 terraform {
+  backend "remote" {
+    organization = "MissionCyberDemonstrator"
+
+    workspaces {
+      name = "mcr-aws-infrabuild"
+    }
+  }
+}
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
