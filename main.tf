@@ -40,7 +40,7 @@ resource "aws_subnet" "MCRPublicSubnet" {
     Terraform = "true"
   }
 }
-*/
+
 resource "aws_security_group" "MCRAllowSSH" {
   name        = "MCRAllowSSH"
   description = "Allow ssh inbound traffic from user connected with VPN"
