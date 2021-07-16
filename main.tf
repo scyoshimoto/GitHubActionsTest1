@@ -28,7 +28,7 @@ resource "aws_vpc" "MCRVPC" {
     instance_tenancy = "default"
     
   tags =  {
-    Name = "MCRVPC2"
+    Name = "MCRVPC"
     Terraform = "true"
   }
 }
