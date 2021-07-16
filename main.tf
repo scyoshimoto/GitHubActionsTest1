@@ -22,7 +22,7 @@ provider "aws" {
   profile = "default"
   region  = "us-east-1"
 }
-# Build the VPC
+ Build the VPC
 resource "aws_vpc" "MCRVPC" {
     cidr_block = "10.31.0.0/16"
     instance_tenancy = "default"
