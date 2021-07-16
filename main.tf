@@ -25,7 +25,7 @@ resource "aws_vpc" "MCRVPC" {
 	cidr_block = "10.31.0.0/16"
   	instance_tenancy = "default"
 	tags = {
-    		Name = "MCRVPC"
+    		Name = "mymcrvpc"
     		Terraform = "true"
   	}
 }
@@ -34,7 +34,7 @@ resource "aws_subnet" "MCRPrivateSubnet" {
 	vpc_id = aws_vpc.MCRVPC.id
   	cidr_block = "10.31.0.0/24"
   	tags = {
-    		Name = "MCRPrivateSubnet"
+    		Name = "mymcrprivatesubnet"
     		Terraform = "true"
   	}
 }
@@ -44,6 +44,6 @@ resource "aws_instance" "MCREC2" {
   	instance_type = "t2.micro"
   	subnet_id = aws_subnet.MCRPrivateSubnet.id  
   	tags = {
-    		Name = "MCREC2"
+    		Name = "myec2instance"
   	}
 }
